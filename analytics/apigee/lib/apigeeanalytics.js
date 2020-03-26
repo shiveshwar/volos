@@ -125,6 +125,7 @@ ApigeeAnalyticsSpi.prototype.makeRecord = function(req, resp, cb) {
     record.response_status_code      = resp.statusCode;
     record.client_sent_start_timestamp = now;
     record.client_sent_end_timestamp = now+1;
+    req.headers.client_sent_end_timestamp = record.client_sent_end_timestamp;
 
     // oauth
     var token = req.token;
